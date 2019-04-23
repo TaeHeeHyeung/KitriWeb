@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function showTime() {
+		var date = new Date();
+		var view = document.getElementById("viewtiem");
+		view.innerHTML = '<font color ="steelblue" size="15"> ' + date
+				+ '</font>';
+				
+	}
+</script>
+</head>
+<body>
+	<div id="viewtime" align="center">asdfasdf</div>
+	<button onclick="showTime();">시간작동</button>
+</body>
+</html>

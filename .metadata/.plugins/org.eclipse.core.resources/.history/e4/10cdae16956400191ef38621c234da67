@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<form action="">
+		<fieldset>
+			<legend>설문조사</legend>
+			<label for="chanel"> 선호채널 </label> <select id="chanel" name="chanel">
+				<option value="kbs">KBS
+				<option value="mbc" selected="selected">MBC
+				<option value="sbs">SBS
+				<option value="jtbc">JTBC
+				<option value="tvn">TVN
+				<option value="ytn">YTN
+			</select>
+		</fieldset>
+	</form>
+
+
+	<form>
+		<fieldset>
+			<legend>설문 조사</legend>
+
+
+			<label for="chanel">선호채널</label> <select id="chanel" name="chanel"
+				size="5" multiple="multiple">
+				<option value="kbs">KBS
+				<option value="mbc" selected="selected">MBC
+				<option value="sbs">SBS
+				<option value="jtbc">JTBC
+				<option value="tvn">TVN
+				<option value="ytn">YTN
+			</select>
+		</fieldset>
+	</form>
+
+</body>
+</html>
