@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript">
+/* 윈도우가 다 읽혀지면 실행 
+ * window.onload 가 없으면 적용이 안된다 (body가 먼저 실행되기 때문에)
+ */
+window.onload = function(){
+	var view = document.getElementById("view");
+	view.innerHTML = '<font color = "magenta" size="15"> 문자열 추가해요 </font>';
+}
+</script>
+
+</head>
+
+<body>
+	<div align="center">
+		<div id="view"></div>
+	</div>
+</body>
+</html>

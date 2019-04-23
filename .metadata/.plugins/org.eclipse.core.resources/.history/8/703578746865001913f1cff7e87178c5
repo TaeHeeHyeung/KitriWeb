@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<div style="background-color: LightGray;">div태그 속성X</div>
+	<span style="background-color: LightGray">span 태그 속성 X</span>
+	<fieldset style="background-color: LightGray">
+		<legend> legend태그를 활용하여 제목 생성 </legend>
+		fieldset태그 속성X
+	</fieldset>
+	<hr>
+	<p>
+	<div style="width: 500px; height: 200px; background-color: LightGray;">div
+		태그 시작 전 줄바꾸기 기능</div>
+	<br>
+
+	<span style="width: 200px; height: 200px; background-color: LightGray">
+		span 태그 </span>
+
+	<fieldset style="width: 50%; height: 50%; background-color: LightGray">
+		테두리 추가 기능
+		<legend> legend태그를 활용하여 제목 생성 </legend>
+	</fieldset>
+
+</body>
+</html>

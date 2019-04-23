@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<div style="background-color: LightGray;">div태그 속성X</div>
+	<span style="background-color: LightGray">span 태그 속성 X</span>
+	<fieldset style="background-color: LightGray">
+		<legend> legend태그를 활용하여 제목 생성 </legend>
+		fieldset태그 속성X
+	</fieldset>
+	<hr>
+	<p>
+	<div style="width: 500px; height: 100px; background-color: LightGray;">div
+		태그 width 500px height 100px 크기고정기능</div>
+	<br>
+
+	<span style="width: 500px; height: 100px; background-color: LightGray">
+		span 태그 width 500px height 100px 크기 변환 안됨.</span>
+	<span style="width: 50%; height: 50%; background-color: LightGray">
+		span 태그 width: 50% height 50% 크기 변환 안됨.</span>
+
+	<fieldset style="width: 50%; height: 50%; background-color: LightGray">
+		fieldset style="width: 50%; height: 50%;
+		<legend> legend태그를 활용하여 제목 생성 </legend>
+	</fieldset>
+	<fieldset style="width: 500px; height: 100px; background-color: LightGray">
+	fieldset style="width: 500px; height: 100px;
+		<legend> legend태그를 활용하여 제목 생성 </legend>
+	</fieldset>
+
+</body>
+</html>

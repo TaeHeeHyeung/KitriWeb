@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<script type="text/javascript">
+function alertOpen(){
+	alert("알림창입니다.");
+}
+function confirmOpen(){
+	confirm("알림창입니다.");
+}
+function promptOpen(){
+	var txt =prompt("입력창", "입력하세요.");$
+	console.log(txt);
+}
+</script>
+<body>
+	<button onclick="javascript: aertOpen()">알림</button>
+	<button onclick="javascript:">확인</button>
+	<button onclick="javascript:">입력</button>
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<script type="text/javascript">
+/* window.close()를 사용하면 탭으로 열렸을때 다른 창들도 함께 닫힌다. */
+	function myClose() {
+		self.close();
+	}
+</script>
+<body>
+	새창입니다.
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<a href="javascript: myClose();">1주일동안 열지 않기</a>
+</body>
+</html>

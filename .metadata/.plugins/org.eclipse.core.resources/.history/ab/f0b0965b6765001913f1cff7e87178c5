@@ -7,7 +7,7 @@
 <body>
 
 	div
-	<div style="width: 100px; height: 200px;">태그 시작 전 줄바꾸기 기능</div>
+	<div style="width: 100px; height: 200px; background-color: gray">태그 시작 전 줄바꾸기 기능</div>
 	div span
 	<span style="width: 200px; height: 200px;">줄바꿈 기능이 없다.</span>span
 

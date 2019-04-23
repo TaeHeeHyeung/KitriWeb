@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	div
+	<div style="width: 100px; height: 200px; background-color: LightGray;">태그
+		시작 전 줄바꾸기 기능</div>
+	div span
+	<span style="width: 200px; height: 200px; background-color: LightGray">줄바꿈
+		기능이 없다.</span>span
+
+	<fieldset style="width: 50%; height: 50%; background-color: LightGray">
+		테두리 추가 기능
+		<legend> legend태그를 활용하여 제목 생성 </legend>
+	</fieldset>
+
+</body>
+</html>
