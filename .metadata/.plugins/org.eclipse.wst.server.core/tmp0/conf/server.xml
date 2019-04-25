@@ -104,7 +104,7 @@
 
 				<Context docBase="E:\javadata\workspace\web\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\ROOT" path="" reloadable="false"/><Context docBase="E:\javadata\workspace\web\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\htmltest" path="/htmltest" reloadable="true" source="org.eclipse.jst.jee.server:htmltest"/>
 				<Context docBase="E:\javadata\workspace\web\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\jstest" path="/js" reloadable="true" source="org.eclipse.jst.jee.server:jstest"/>
-			<Context docBase="E:\javadata\workspace\web\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\personal" path="/personal" reloadable="true" source="org.eclipse.jst.jee.server:personal"/></Host>
+			<Context docBase="E:\javadata\workspace\web\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\personal" path="/personal" reloadable="true" source="org.eclipse.jst.jee.server:personal"/><Context docBase="E:\javadata\workspace\web\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\xmltest" path="/xmltest" reloadable="true" source="org.eclipse.jst.jee.server:xmltest"/></Host>
 		</Engine>
 	</Service>
 </Server>

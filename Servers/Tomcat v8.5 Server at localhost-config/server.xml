@@ -104,7 +104,7 @@
 
 				<Context docBase="htmltest" path="/htmltest" reloadable="true" source="org.eclipse.jst.jee.server:htmltest"/>
 				<Context docBase="jstest" path="/js" reloadable="true" source="org.eclipse.jst.jee.server:jstest"/>
-			<Context docBase="personal" path="/personal" reloadable="true" source="org.eclipse.jst.jee.server:personal"/></Host>
+			<Context docBase="personal" path="/personal" reloadable="true" source="org.eclipse.jst.jee.server:personal"/><Context docBase="xmltest" path="/xmltest" reloadable="true" source="org.eclipse.jst.jee.server:xmltest"/></Host>
 		</Engine>
 	</Service>
 </Server>
