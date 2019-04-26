@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+
+<style type="text/css">
+/*
+floot의 경우 진짜 떠다니는 느낌이다.
+https://ko.learnlayout.com/clear.html
+*/
+/*
+모바일 대응 반응형사이트
+https://ko.learnlayout.com/media-queries.html
+*/
+
+/* 항상 최상단으로 위치 
+position : fixed
+이런때 div이지만 width 크기를 지정해줘야한다.
+모바일경우 지원이 불안정하기 때문에 모바일이 아닌경우에만 처리해주자
+body의 마진을 추가해줬다.
+*/
+:root {
+	-icon-heith: 70px;
+}
+
+body {
+	margin: 0px;
+	padding: 0px;
+	margin-top: 70px;
+}
+/* crom에서 기본값으로 마진이 잡혀있다. */
+ul {
+	margin: 0px;
+}
+
+.header {
+	position: fixed;
+	height: 70px;
+	width: 100%;
+	top: 0;
+	left: 0;
+	background-color: LightGray;
+	width: 100%;
+}
+
+.header .h_inner {
+	height: 70px;;
+	background-color: Green;
+}
+
+.header a {
+	float: left;
+}
+
+.header li {
+	float: left;
+	width: 80px;
+	height: 70px;;
+	background-color: Gray;
+}
+
+.header .fl_login {
+	float: right;
+}
+
+.header #hr_logo {
+	height: 70px;;
+	widght: 100px;
+}
+
+img {
+	height: 70px;;
+	width: 70px;;
+}
+
+/* ============== search_area 검색창 ===================== */
+.search_area {
+	height: 500px;
+	width: 100%;
+	background-color: lightgray;
+	display: table;
+	background-color: lightgray;
+}
+
+.search_area #search_area_content {
+	text-align: center;
+	display: table-cell;
+	vertical-align: middle;
+	background-color: gray;
+}
+
+.container {
+	background-color: maroon;
+}
+</style>
+
+
+</head>
+<body>
+	<!-- inline box 에서만 적용되는 box-sizing 박스의 크기를 고정 (padding  -->
+	<!-- inline요소에는 vertical-align이 작동되지 못하여 center를 주기 위해 block으로 변경시켰습니다. -->
+	<div class="header">
+		<div class="h_inner">
+			<a id="hr_logo"><img alt="타요타요 함께타요"
+				src="/personal/project/img/logo.jpg"></a>
+			<ul>
+				<li>함께 타요</li>
+				<li>일정 만들기</li>
+				<li>코스 추천받기</li>
+			</ul>
+			<div class="fl_login">로그인</div>
+		</div>
+
+	</div>
+
+	<div class="search_area">
+		<div id="search_area_content">
+			<p>p태그를 활용해봐요</p>
+			<p>아래 내용을 가운데로 오게 할 수 있어요</p>
+			<input type="text" value="a">이거를 가운데 정렬하고싶다.
+		</div>
+
+	</div>
+
+	<div class="container">
+		<div class="my_page"></div>
+		<div class="traval_list"></div>
+	</div>
+
+	<div class="footer"></div>
+</body>
+</html>

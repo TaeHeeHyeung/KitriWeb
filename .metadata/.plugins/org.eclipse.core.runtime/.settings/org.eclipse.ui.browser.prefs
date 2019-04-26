@@ -1,3 +1,10 @@
+<<<<<<< HEAD
+browser-choice=1
+browsers=<?xml version\="1.0" encoding\="UTF-8"?>\r\n<web-browsers current\="2">\r\n<system/>\r\n<external location\="C\:\\Program Files\\Internet Explorer\\iexplore.exe" name\="Internet Explorer"/>\r\n<external location\="C\:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe" name\="Chrome"/>\r\n</web-browsers>
+eclipse.preferences.version=1
+internalWebBrowserHistory=file\:///E\:/javadata/workspace/web/personal/WebContent/project/img/stock-vector-bus-icon-common-mass-transit-pictogram-thin-line-style-yellow-background-519685579.jpg|*|file\:/E\:/javadata/workspace/web/personal/WebContent/project/img/stock-vector-bus-icon-common-mass-transit-pictogram-thin-line-style-yellow-background-519685579.jpg|*|file\:///E\:/javadata/workspace/web/htmltest/WebContent/img/logo.png|*|file\:/E\:/javadata/workspace/web/htmltest/WebContent/img/logo.png|*|http\://localhost/htmltest/html/chap3/3-13.html|*|
+=======
 browser-choice=1
 browsers=<?xml version\="1.0" encoding\="UTF-8"?>\r\n<web-browsers current\="2">\r\n<system/>\r\n<external location\="D\:\\Program Files\\Internet Explorer\\iexplore.exe" name\="Internet Explorer"/>\r\n<external location\="D\:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe" name\="Chrome"/>\r\n</web-browsers>
 eclipse.preferences.version=1
+>>>>>>> ca8295db9254b6a4b01415c8463347792f4a06cf

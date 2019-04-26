@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+
+<!DOCTYPE booklist [
+<!ELEMENT booklist (book+)>
+<!ELEMENT book (title, author, publisher, price, description*)>
+	
+	<!ELEMENT title (#PCDATA)>
+		<!ELEMENT author ((name|writer), tel, address)>
+			<!ELEMENT name (#PCDATA)>
+			<!ELEMENT writer (#PCDATA)>
+				<!ATTLIST name sex (남|여) "남">
+				<!ATTLIST writer sex (남|여) "남">
+			<!ELEMENT tel (#PCDATA)>
+			<!ELEMENT address (#PCDATA)>
+	<!ELEMENT publisher (#PCDATA)>
+	<!ELEMENT price (#PCDATA)>
+	<!ELEMENT description (#PCDATA)>
+
+<!ATTLIST book kind (IT|소설|잡지) "IT" isbn ID #IMPLIED>
+]
+>
+
+<booklist>
+	<book isbn="a1">
+		<title>책 제목</title>
+		<author>
+			<writer sex="남">저자명</writer>
+			<tel>전화번호</tel>
+			<address>주소</address>
+		</author>
+		<publisher>출판사</publisher>
+		<price>가격</price>
+	</book>
+	<book kind="IT" isbn="a2">
+		<title>책 제목</title>
+		<author>
+			<name sex="남">저자명</name>
+			<tel>전화번호</tel>
+			<address>주소</address>
+		</author>
+		<publisher>출판사</publisher>
+		<price>가격</price>
+	</book>
+
+	<book isbn="a3">
+		<title>책 제목</title>
+		<author>
+			<writer>저자명</writer>
+			<tel>전화번호</tel>
+			<address>주소</address>
+		</author>
+		<publisher>출판사</publisher>
+		<price>가격</price>
+		<description>설명</description>
+	</book>
+</booklist>
