@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rename resource &apos;htmltest/WebContent/html/chap3/3-147.html&apos; to &apos;3-148.html&apos;" description="Rename resource &apos;3-147.html&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="WebContent/html/chap3/3-147.html" name="3-148.html" stamp="1555638284127" updateReferences="true"/>
-</session>
