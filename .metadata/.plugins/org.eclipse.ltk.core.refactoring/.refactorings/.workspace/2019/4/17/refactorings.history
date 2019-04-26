@@ -1,4 +1,3 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rename resource &apos;Personal&apos; to &apos;personal&apos;" description="Rename resource &apos;Personal&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/Personal" name="personal" stamp="1555922357628" updateReferences="true"/>
+<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;Personal&apos; to &apos;personal&apos;" description="Rename resource &apos;Personal&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/Personal" name="personal" stamp="1555922357628" updateReferences="true"/>&#x0A;<refactoring comment="Rename Java project &apos;jdbc&apos; to &apos;jdbctest&apos;&#x0D;&#x0A;- Original element: &apos;jdbc&apos;&#x0D;&#x0A;- Renamed element: &apos;jdbc&apos;&#x0D;&#x0A;- Update references to refactored element" description="Rename Java project &apos;jdbc&apos;" flags="7" id="org.eclipse.jdt.ui.rename.java.project" input="=jdbc" name="jdbctest" references="true" stamp="1556241312501" version="1.0"/>
 </session>
