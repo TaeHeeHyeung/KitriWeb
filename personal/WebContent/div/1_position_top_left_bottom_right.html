@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<style type="text/css">
+
+/* 
+ div의 포지션 default값 static 
+ */
+div.static {
+	position: static;
+	left: 100px;
+	border: 3px solid #73AD21;
+}
+
+div.relative {
+	position: relative;
+	left: 30px;
+	border: 3px solid #73AD21;
+}
+
+div.relative_2 {
+	position: relative;
+	width: 400px;
+	height: 300px;
+	border: 3px solid #73AD21;
+}
+
+/* top bottom  left right 중 하나만 선택 
+둘개 동시 사용시 우선순위 top, left
+*/
+div.relative_absolute {
+	position: absolute;
+	top: 30px;
+	bottom: 30px;
+	left: 100px;
+	right: 50px;
+	width: 400px;
+	height: 150px;
+	border: 3px solid #73AD21;
+	right: 50px;
+}
+
+div.sticky {
+	position: -webkit-sticky; /* Safari */
+	position: sticky;
+	top: 50px;
+	padding: 5px;
+	background-color: #cae8ca;
+	border: 2px solid #4CAF50;
+}
+
+/* 
+left 0이 기본값
+top과 bottom 둘중 하나는 필수로 지정해줘야한다. 
+*/
+div.fixed {
+	position: fixed;
+	width: 300px;
+	border: 3px solid #73AD21;
+	bottom: 0px;
+}
+
+span.span_left100 {
+	left: 100px;
+	border: 3px solid #73AD21;
+}
+
+span.span_position {
+	position: relative;
+	border: 3px solid #73AD21;
+	left: 100px;
+}
+
+p.p_relative {
+	position: relative;
+	left: 100px;
+	border: 3px solid #73AD21;
+}
+
+div.div_relative {
+	position: relative;
+	left: 100px;
+	border: 3px solid #73AD21;
+}
+
+div.div_relative_ab {
+	position: relative;
+	left: 100px;
+	border: 3px solid #73AD21;
+}
+
+div.div_absolute1 {
+	position: absolute;
+	left: 100px;
+	border: 3px solid #73AD21;
+}
+
+div.div_ab1 {
+	position: absolute;
+	left: 100px;
+	border: 3px solid #73AD21;
+}
+
+div.div_ab2 {
+	position: absolute;
+	left: 110px;
+	border: 3px solid #73AD21;
+}
+
+/* div.d1 {
+	position: absolute;
+	left: 0px;
+	right: 0px;
+	border: 3px solid #73AD21;
+}
+
+div.d2 {
+	position: absolute;
+	left: 100px;
+	border: 3px solid #73AD21;
+} */
+
+/* 
+height: 1000px; 크기 고정 
+padding-bottom: 2000px; 크기 변동
+테스트 필요
+*/
+div.temp {
+	padding-bottom: 2000px;
+}
+</style>
+<body>
+	<p>설명: position:static은 div의 default 속성입니다. left를 정해줘도 움직이지 않습니다.</p>
+	<div class="static">div position: static; left: 100px</div>
+	<br>
+	<div class="relative">div position: relative; left: 100px;</div>
+	<hr />
+
+	<p>설명: Top과 left에 우선순위가 있습니다</p>
+	<br>
+	<div class="relative_2">
+		div position: relative;
+		<div class="relative_absolute">
+			div position: absolute; <br> top: 30px; <br>
+			<del>bottom: 30px;</del>
+			<br> left: 100px; <br>
+			<del>right: 50px;</del>
+			<br> top과 left에 우선순위
+		</div>
+	</div>
+	<br>
+	<div class="fixed">div position: fixed;</div>
+	<br>
+	<hr />
+
+	<p>설명: span에는 position이 없습니다. position을 정해주면 left속성이 작동됩니다.</p>
+	<span class="span_left100">span left: 100px;</span>
+	<span class="span_position">span position: relative; left:
+		100px;</span>
+	<p>p태그 또한 마찬가지 입니다.</p>
+	<p style="left: 100px; border: 3px solid #73AD21;">p left: 100px;</p>
+	<p class="p_relative">p position: relative; left: 100px;</p>
+
+	<hr />
+	<p>
+		설명: 크롬에서 body태그에는 기본적으로 margin:8px가 잡혀있습니다. <br>그렇기에 relative와
+		absoulte의 left가 다른 위치를 기준으로 잡고 있는 모습입니다.
+	</p>
+	<div class="div_relative_ab">div position: relative; left:100;</div>
+	<div class="div_absolute1">div position: absolute; left:100;</div>
+	<br>
+	<br>
+	<hr />
+	<p>설명: display: absoulte 사용시 div의 기능이 사라집니다.</p>
+	<div class="div_ab1">div position: absolute; left:100;</div>
+	<div class="div_ab2">div position: absolute; left:100;</div>
+	<br>
+	<br>
+	<hr />
+
+	<!-- <p>
+		설명: absoulte포지션에 left 0 right 0 속성을 추가하여 block처럼 만들 수 있습니다. <br>
+		하지만 겹치는 현상은 해결되지 못하였습니다. <br>(absoulte div의 top을 지정해줄 때 body로부터
+		지정되기 때문에 빨간색 relative div를 생성하였습니다.)
+	</p>
+	<div style="position: relative; border: 3px solid red;">
+		<div class="d1">div position: absoulte; left 0 right 0</div>
+		<div class="d1" style="top: 20px; left: 270px;">div position:
+			absoulte; top: 20px; left 270 right 0</div>
+				<br>
+	<br>
+	<br>
+	<hr />
+	</div> -->
+
+
+	<div class="sticky">I am sticky!</div>
+	<br>
+	<div class="temp">stiky와 fix를 테스트해보기위한 공백입니다. 스크롤 해주세요.</div>
+	<br>
+
+
+
+
+
+
+</body>
+</html>

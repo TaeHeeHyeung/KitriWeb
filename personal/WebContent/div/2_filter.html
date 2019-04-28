@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style type="text/css">
+.div_opacity * {
+	display: inline-block;
+	background-color: lightblue;
+	width: 100px;
+	height: 100px;
+}
+
+.d1 {
+	padding: 10px;
+	opacity: 0.1;
+	/* filter: alpha(opacity = 10); For IE8 and earlier */
+}
+
+.d2 {
+	padding: 10px;
+	opacity: 0.3;
+}
+
+.d3 {
+	padding: 10px;
+	opacity: 0.7;
+}
+
+.d4 {
+	padding: 10px;
+	opacity: 0.8;
+}
+
+.bgimg {
+	background-image: url('img/background.png');
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	text-align: center;
+	padding: 70px 0;
+}
+
+.filt {
+	background-image: url('img/background.png');
+	background-size: cover;
+	width: 200px;
+	height: 200px;
+}
+</style>
+</head>
+<body>
+	<p>
+		설명 <br> opacity: 0 ~ 1 배경 투명도 설정 <br> background: rgba(76,
+		175, 80, 0.3) 색상을 설정할 때 투명도를 설정할 수 있음 <br>filter: alpha(opacity =
+		90); IE8이전에서 사용법 value: 0~100 opacity 와 함께 사용해줘도 된다.
+	</p>
+	<div class="div_opacity">
+		<div class="d1"></div>
+		<div class="d2"></div>
+		<div class="d3"></div>
+		<div class="d4"></div>
+	</div>
+
+	<br>
+	<hr>
+	<br>
+	<div class="bgimg">
+		<p style="background-color: gray; opacity: 0.5;">
+			<b>글자도 투명해져요</b>
+		</p>
+	</div>
+
+	<br>
+	<hr>
+	<br>
+
+	<p>
+		<a
+			href="https://www.w3schools.com/cssref/playit.asp?filename=playcss_filter&preval=none">필터
+			예제 사이트</a> <br>(https://www.w3schools.com/cssref/css3_pr_filter.asp)
+		<br> <br> blur(px) | brightness(%) | contrast(%) |
+		drop-shadow() | grayscale(%) | hue-rotate(deg) | invert(%) |
+		opacity(%) | saturate(%) | sepia(%) | url() <br> 배경으로 사용할만한 기능:
+		blur(흐림처리), opacity(투명도 처리)<br><br> 그 외<br> chroma: 특정색상 투명하게 <br>
+		dropshadow: 그림자효과 <br> flipH: 수평방향으로 반사되어 비치는 효과 <br> flipV:
+		수직방향으로 반사되어 비치는 효과 <br> glow: 경계선 바깥쪽에 색번짐 효과 <br> gray:
+		흑백으로 표현
+	</p>
+	<div class="filt" style="filter: blur(5px); filter: opacity(30%);"></div>
+
+
+</body>
+</html>
