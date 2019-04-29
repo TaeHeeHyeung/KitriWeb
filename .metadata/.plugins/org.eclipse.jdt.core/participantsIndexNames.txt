@@ -1,3 +1,0 @@
-INDEX VERSION 1.131
-E:\3.worksapce\web\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\648987399.index
-\test\src
