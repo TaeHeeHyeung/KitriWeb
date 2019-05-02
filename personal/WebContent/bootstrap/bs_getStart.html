@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+<title>Insert title here</title>
+</head>
+<body>
+
+<h3>1. viewport의 속성</h3>
+
+<pre>
+width : viewport의 가로 크기를 조정한다. 일반적인 숫자값이 들어갈 수도 있고, 
+        device-width와 같은 특정한 값을 사용할 수도 있다. device-width는 100% 스케일에서 CSS 픽셀들로 계산된 화면의 폭을 의미한다.
+<br/>height : viewport의 세로 크기를 조정한다.
+<br/>initial-scale : 페이지가 처음 로딩될 때 줌 레벨을 조정한다. 값이 1일때는 CSS 픽셀과 기기 종속적인 픽셀 간의 1:1 관계를 형성한다.
+<br/>minimum-scale : viewport의 최소 배율값, 기본값은 0.25이다.
+<br/>maximum-scale : viewport의 최대 배율값, 기본값은 1.6이다.
+<br/>user-scalable : 사용자의 확대/축소 기능을 설정, 기본값은 yes이다.
+</pre>
+<!-- 웹 -->
+	<div class="container">
+		<h1>My First Bootstrap Page</h1>
+		<p>This is some text.</p>
+	</div>
+
+<!-- 모바일 -->
+	<div class="container=fluid">
+		<h1>My First Bootstrap Page</h1>
+		<p>This is some text.</p>
+	</div>
+
+
+</body>
+</html>
