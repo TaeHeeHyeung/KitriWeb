@@ -28,7 +28,6 @@ public class Counter extends HttpServlet {
 			throws ServletException, IOException {
 
 		cnt++;
-
 		response.setContentType("text/html; charset=UTF-8");
 		PrintWriter writer = response.getWriter();
 		writer.print("<html>");
@@ -45,6 +44,7 @@ public class Counter extends HttpServlet {
 		}
 		for (int i = 0; i < str.length(); i++) {
 			writer.print("<img src='/basicservlet/img/" + str.charAt(i) + ".png' style='width:100px' > ");
+			
 //			char ch = str.charAt(i);
 //			int num = (ch - 48);
 //			writer.print("<img src='/basicservlet/img/" + num + ".png' style='width:100px' > ");
