@@ -14,10 +14,10 @@
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
 <script type="text/javascript">
 	function register() {
-		var re = /^[a-zA-Z0-9]{4,12}$/ //아이디와 패스워드가 적합한지 검사할 정규식
+		/* var re = /^[a-zA-Z0-9]{4,12}$/ //아이디와 패스워드가 적합한지 검사할 정규식
 		if (!check(re, document.getElementById("name"), "잘못된 형식으로 이름을 입력하였습니다.")) {
 			return false;
-		}
+		} */
 		if (document.getElementById("name").value == "") {
 			alert("이름 입력해라!!!!");
 			return;
