@@ -23,13 +23,18 @@ public class MemberRegister extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+
 	}
 
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("utf-8");
 		System.out.println("회원가입하러왔다.");
-//		doGet(request, response);
-	}
+//		1.data get (이름, 아이디, 비번, 이메일1, 이메일2, 전번1, 전번2, 전번3, 우편번호, 주소, 상세주소)
+		
+//		2. Logic : 1의 data를 insert
+		
+		
+	}//doPost
 
 }
