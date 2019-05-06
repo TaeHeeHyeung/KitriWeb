@@ -1,0 +1,48 @@
+<html>
+<meta charset="UTF-8">
+
+<!-- jquery CDN 방식-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<!-- 출처 https://m.blog.naver.com/PostView.nhn?blogId=mjuzhj23&logNo=140152265482&proxyReferer=https%3A%2F%2Fwww.google.com%2F -->
+<script type="text/javascript">
+	window.onload = function() {
+		var navlist = document.getElementById("nav").getElementsByTagName("li");
+		console.log(navlist[0].getAttribute('data-value'));
+		for (let li of navlist) {
+			console.log(li.getAttribute('data-value'));
+			li.addEventListener('click', addPage(li.getAttribute('data-value')));
+		}
+	}
+	 $(document).ready(function(){
+		$.ajax({
+			type : "get", // post 또는 get
+			url : "/ajaxtest/",
+			dataType : "html",
+			data : {
+				a : "값1",
+				b : "값2"
+			}, // 호출할 url 에 있는 페이지로 넘길 파라메터
+			success : function(result) {
+				$("#Page").html(result);
+			}
+		});
+	}
+</script>
+
+
+<body>
+
+	<h2>페이지 로드해보기</h2>
+	<ul id="nav">
+		<li data-value='page1.html'>관광지/맛집 추천</li>
+		<li data-value="page2.html">여행지 일정 추천</li>
+		<li data-value="page3.html">일정 짜기</li>
+		<li data-value="page4.html">함께 타기</li>
+	</ul>
+	<div id="Page"></div>
+
+
+</body>
+
+</html>

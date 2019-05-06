@@ -1,0 +1,7 @@
+이클립스
+- 데이터베이스 ER모델 플러그인(EXERD)
+exerd - http://exerd.com/update/3.x
+- 자동완성기능 tern
+tern - http://oss.opensagres.fr/tern.repository/1.2.0/ 
+
+

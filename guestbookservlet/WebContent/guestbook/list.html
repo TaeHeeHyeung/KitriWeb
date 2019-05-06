@@ -13,36 +13,37 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
 <script type="text/javascript">
-	window.location = "/guestbookservlet/gblist"
+	window.onload = function() {
+		var form = document.getElementById("readlist");
+		form.action = "/guestbookservlet/gblist"
+		form.submit();
+	}
 </script>
 </head>
 <body>
+	<h2>글목록</h2>
+	<table class="table table-borderless">
+		<tr>
+			<td align="right"><button type="button" class="btn btn-link">글쓰기</button></td>
+		</tr>
 
-	<div class="container" align="center">
-		<div class="col-lg-8" align="center">
-			<h2>글목록</h2>
-			<table class="table table-borderless">
+	</table>
+	
+	<form id="readlist" action="" method="post">
+		<table class="table table-active">
+			<tbody>
 				<tr>
-					<td align="right"><button type="button" class="btn btn-link">글쓰기</button></td>
+					<td>작성자 : 홍길동</td>
+					<td style="text-align: right;">작성일 : 2019.05.05</td>
 				</tr>
-
-			</table>
-			<table class="table table-active">
-				<tbody>
-					<tr>
-						<td>작성자 : 홍길동</td>
-						<td style="text-align: right;">작성일 : 2019.05.05</td>
-					</tr>
-					<tr>
-						<td colspan="2"><strong>글번호. 제목</strong></td>
-					</tr>
-					<tr>
-						<td colspan="2">내용</td>
-					</tr>
-				</tbody>
-			</table>
-		</div>
-	</div>
-
+				<tr>
+					<td colspan="2"><strong>글번호. 제목</strong></td>
+				</tr>
+				<tr>
+					<td colspan="2">내용</td>
+				</tr>
+			</tbody>
+		</table>
+	</form>
 </body>
 </html>

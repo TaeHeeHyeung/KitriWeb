@@ -13,7 +13,11 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
 <script type="text/javascript">
-	
+	function writeArticle() {
+		var form = document.getElementById("writeform");
+		form.action = "/guestbookservlet/gbwrite";
+		form.submit();
+	}
 </script>
 </head>
 <body>
@@ -25,17 +29,17 @@
 				<div class="form-group" align="left">
 					<label for="name">작성자:</label> <input type="text"
 						class="form-control" id="name" name="name"
-						placeholder="작성자 이름입력...">
+						placeholder="작성자 이름입력..." value="형태희">
 				</div>
 				<div class="form-group" align="left">
 					<label for="subject">제목:</label> <input type="text"
 						class="form-control" id="subject" name="subject"
-						placeholder="제목입력...">
+						placeholder="제목입력..." value="제목">
 				</div>
 				<div class="form-group" align="left">
 					<label for="content">내용:</label>
 					<textarea class="form-control" rows="15" id="content"
-						name="content"></textarea>
+						name="content" >내용1 &#10;내용2</textarea>
 				</div>
 				<button type="button" class="btn btn-primary"
 					onclick="javascript:writeArticle();">글작성</button>
