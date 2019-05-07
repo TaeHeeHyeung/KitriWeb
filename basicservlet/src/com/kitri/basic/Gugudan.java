@@ -41,7 +41,5 @@ public class Gugudan extends HttpServlet {
 			writer.println("</tr>");
 		}
 		writer.println("</table>");
-
 	}
-
 }

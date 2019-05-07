@@ -15,7 +15,7 @@ public class DBNo extends DBConnection {
 			ResultSet resultSet = stmt.executeQuery(sql);
 			resultSet.next();
 			no = resultSet.getInt(1);
-
+			
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}

@@ -26,7 +26,7 @@ public class GustBookList extends HttpServlet {
 	}
 
 	@Override
-	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 //		1. 글 이름 얻기
 		request.setCharacterEncoding("utf-8");
@@ -37,10 +37,10 @@ public class GustBookList extends HttpServlet {
 		Connection con = null;
 		response.setContentType("text/html; charset=utf-8");
 		try {
-			con = DriverManager.getConnection(GuestBookConstants.URL, GuestBookConstants.ID, GuestBookConstants.PASS);
-//			con = DriverManager.getConnection("jdbc:oracle:thin:@192.168.14.52:1521:orcl", "kitri", "kitri");
+//			con = DriverManager.getConnection(GuestBookConstants.URL, GuestBookConstants.ID, GuestBookConstants.PASS);
+			con = DriverManager.getConnection("jdbc:oracle:thin:@192.168.14.52:1521:orcl", "kitri", "kitri");
 
-			String sql = "select * from gustbooklist";
+			String sql = "select seq, name, subject, content, logtime from guestbook";
 			preStmt = con.prepareStatement(sql);
 			ResultSet rest = preStmt.executeQuery();
 			while (rest.next()) {
@@ -54,7 +54,7 @@ public class GustBookList extends HttpServlet {
 				Reader br = content.getCharacterStream();
 				char[] cbuf = new char[(int) content.length()];
 				br.read(cbuf);
-				
+
 				out.print(sq);
 				out.print(name);
 				out.print(subject);

@@ -1,0 +1,18 @@
+** JSP (Java Server Page)
+servlet(*.java) : html in java 
+jsp(*.jsp) : java in html
+
+
+- jsp는 servlet으로 변환되어서 실행된다.(최초에 한번 was가 판단해서 알아서 변환시켜준다.)
+* 	compile 기반 : servlet, jsp(run)
+(실행시점에 byte코드로 변환되어 실행되기 때문에 실행속도가 빠르다. 코드가 분리되어있어야되기 때문에 코딩하기 어렵다.) 
+*	script 기반 : jsp(code), asp, php
+(compile 기반에 비해 실행속도가 느리다. 코딩하기 편하다)
+
+
+--Script Element
+1. 선언부 : jsp에서 사용될 변수, 메소드를 선언하는 영역
+ 
+2. 처리부
+ 
+3. 출력부
