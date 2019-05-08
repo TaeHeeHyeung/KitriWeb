@@ -1,0 +1,64 @@
+controller 만들기 servlet으로 
+(I) 만 만들어놓기
+membermvc
+	src
+		- com.kitri.member.controller
+		  AdminController.java (Servlet : /admin)
+		  
+		- com.kitri.member.model
+		
+		- com.kitri.member.model.dao
+		  AdminDao.java (I)
+		  AdminDaoImpl.java
+		  
+		- com.kitri.member.model.service
+		  AdminService.java (I)
+		  AdminServiceImpl.java
+		
+		- com.kitri.admin.controller
+		  MemberController.java (Servlet : /user)
+		  
+		- com.kitri.admin.model
+		  MemberDto.java
+		  MemberDetailDto.java
+		  ZipcodeDto.java
+		  
+		- com.kitri.admin.model.dao
+		  MemberDao.java (I)
+		  MemberDaoImpl.java 
+		
+		- com.kitri.admin.model.service
+		  MemberService.java (I)
+		  MemberServiceImpl.java 
+		
+		- com.kitri.util
+		  DBConnection.java
+		  DBClose.java
+		  Encoder.java
+	
+	
+	webContent
+		- js : member.js
+		- css : *.css
+		- img : *.jpg, png, gif
+		- admin
+			- member
+			  memberlist.jsp
+			
+			
+		- user 
+			- member
+				member.jsp
+				registerok.jsp
+				registerfail.jsp
+				idcheck.jsp
+				zipsearch.jsp
+				membermodify.jsp
+				
+			- login
+				login.jsp
+				loginok.jsp
+				loginfail.jsp
+				
+		- index.jsp
+		
