@@ -18,9 +18,9 @@
 	<br>
 	<a href="/basicsjsp/dbcounter.jsp">4. 방문자(DB)</a>
 	<br>
-	<a href="/basicsjsp/param/singleparam.html">5. 단일 파라미터 전달</a>
+	<a href="/basicsjsp/param/singleparam.jsp">5. 단일 파라미터 전달</a>
 	<br>
-	<a href="/basicsjsp/param/multiparam.html">6. 다중 파라미터 전달</a>
+	<a href="/basicsjsp/param/multiparam.jsp">6. 다중 파라미터 전달</a>
 	<br>
 
 </body>
