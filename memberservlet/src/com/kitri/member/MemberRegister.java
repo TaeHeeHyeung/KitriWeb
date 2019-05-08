@@ -52,7 +52,7 @@ public class MemberRegister extends HttpServlet {
 		String name = request.getParameter("name");
 		String id = request.getParameter("id");
 		String pass = request.getParameter("pass");
-		System.out.println("id:" + id + "pass" + pass);
+
 		String emailId = request.getParameter("emailid");
 		String emaildomain = request.getParameter("emaildomain");
 
@@ -62,13 +62,14 @@ public class MemberRegister extends HttpServlet {
 		String tel1 = request.getParameter("tel1");
 		String tel2 = request.getParameter("tel2");
 		String tel3 = request.getParameter("tel3");
-
+		System.out.println("name: " + name + "id: " + id + "pass: " + pass + "emailId: " + emailId);
+		System.out.println("emaildomain: " + emaildomain + "zipcode: " + zipcode + "address: " + address + "address_detail: " + address_detail);
 		try {
 			con = DriverManager.getConnection("jdbc:oracle:thin:@192.168.14.52:1521:orcl", "kitri", "kitri");
 			StringBuffer sql = new StringBuffer();
 			sql.append("insert all \n ");
 //			sql.append("into member  \n ");
-			sql.append("into member (id, name,pass,emailid, emaildomain,joindate) \n ");
+			sql.append("into member (id, name,pass,emailid, emaildomain, joindate) \n ");
 			sql.append("values (?, ?, ?, ?, ? , sysdate ) \n");
 			sql.append("into member_detail (id, zipcode, address, address_detail, tel1,tel2,tel3) \n");
 			sql.append("values(?,?,?,?,?,?,?)");
@@ -76,8 +77,8 @@ public class MemberRegister extends HttpServlet {
 			preStmt = con.prepareStatement(sql.toString()); // 컴파일시 문법검사
 
 			int idx = 0;
-			preStmt.setString(++idx, name);
 			preStmt.setString(++idx, id);
+			preStmt.setString(++idx, name);
 			preStmt.setString(++idx, pass);
 			preStmt.setString(++idx, emailId);
 			preStmt.setString(++idx, emaildomain);

@@ -30,8 +30,9 @@ public class MemberLogin extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		System.out.println("로그인하러왔다.");
-//		doGet(request, response);
+
 		request.setCharacterEncoding("utf-8");
+//		doGet(request, response);
 //		1. 입력값 받기
 		String id = request.getParameter("id");
 		String pass = request.getParameter("pass");

@@ -10,17 +10,19 @@
 		} else if (pass == "") {
 			alert("비밀번호를 입력해주세요.");
 		} else {
-			document.getElementById("loginform").action ="/memberservlet/login";
+			document.getElementById("loginform").action ="<%=root%>/user/loginprocess.jsp";
 			document.getElementById("loginform").submit();
 		}
 	}
 	$(document).ready(function() {
 
 	});
+	function mvjoin(){
+		document.location.href="<%=root%>/user/member.jsp";
+	}
 </script>
 </head>
 <body>
-
 	<div class="container" align="center">
 		<div class="col-lg-6" align="center">
 			<h2>로그인</h2>
@@ -36,7 +38,7 @@
 				<div class="form-group" align="center">
 					<button type="button" class="btn btn-warning" id="loginBtn"
 						onclick="javascript:login();">로그인</button>
-					<button type="button" class="btn btn-primary" id="moveRegisterBtn">회원가입</button>
+					<button type="button" class="btn btn-primary" id="moveRegisterBtn" onclick="javascript:mvjoin();">회원가입</button>
 				</div>
 			</form>
 		</div>
