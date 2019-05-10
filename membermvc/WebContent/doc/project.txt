@@ -62,3 +62,17 @@ membermvc
 				
 		- index.jsp
 		
+		
+*HttpSession & Cookie
+Cookie		:	(저장위치: client txt) 	String -> 아이디저장, 오늘은그만볼래요, 홈쇼핑 오늘 본 상품 
+httpSession :	(저장위치: server memory)	Object -> 
+
+로그아웃을 하고 다른기기에도 보인다->데이터베이스
+컴퓨터 메모리에 저장하기 때문에 로그아웃하면 날린다 -> 로그인정보를 담고 있는 세션 활용
+클라이언트에 데이터를 저장해논다(pc에 파일저장) -> 쿠키
+오늘 본 상품: 쿠키
+찜 목록: (쇼핑몰 사내 정책) 
+장바구니: (상세 정보 포함) 
+ 
+
+	

@@ -11,6 +11,6 @@
 		out.println("서버에 문제가 있습니다 .");
 		out.println("다시시도해주세요.");
 		out.println("</font>");
+	
 	%>
-</body>
-</html>
+<%@ include file="/template/footer.jsp"%>
