@@ -37,7 +37,7 @@ public class AdminDaoImple implements AdminDao {
 				if("id".equals(key)) {
 					sql.append("and m.id = ? \n");
 				}else {
-					sql.append("and m."+key+"like '%'||?||'%'  \n");
+					sql.append("and d."+key+"like '%'||?||'%'  \n");
 				}
 			}
 			
