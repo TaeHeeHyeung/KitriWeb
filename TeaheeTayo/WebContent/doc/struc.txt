@@ -19,7 +19,3 @@ tayotayo
             - myschedule
             - tayotogether
             - abouttayo
-            
-            
-            
-참고: packages.html
