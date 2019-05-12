@@ -1,5 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
+<style>
+
+</style>
 <!-- text -->
 <section class="text-content">
 	<div class="overlay-inner py-5">
@@ -31,7 +35,7 @@
 						<li><a href="" class="scroll">여행지 추천</a></li>
 						<li><a href="" class="scroll">여행 일정 추천</a></li>
 						<li><a href="" class="scroll">일정 만들기</a></li>
-						<li><a href="/TaYo/tayotogether/tayotogether.jsp" class="scroll">함께타요</a></li>
+						<li><a href="<%=root%>/tayotogether/tayotogether.jsp" class="scroll">함께타요</a></li>
 						<li><a href="" class="scroll">My Page</a></li>
 					</ul>
 				</div>

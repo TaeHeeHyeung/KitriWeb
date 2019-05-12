@@ -24,15 +24,15 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	String root = request.getContextPath(); //server.xml의 context
 %>
 <!-- css files -->
-<!-- <link href="/TaYo/css/bootstrap.css" rel='stylesheet' type='text/css' /> -->
+<!-- <link href="<%=root%>/css/bootstrap.css" rel='stylesheet' type='text/css' /> -->
 <!-- bootstrap css -->
-<!-- <link href="/TaYo/css/style.css" rel='stylesheet' type='text/css' /> -->
+<!-- <link href="<%=root%>/css/style.css" rel='stylesheet' type='text/css' /> -->
 <!-- custom css -->
-<!-- <link href="/TaYo/css/font-awesome.min.css" rel="stylesheet"> -->
+<!-- <link href="<%=root%>/css/font-awesome.min.css" rel="stylesheet"> -->
 <!-- fontawesome css -->
 
 <!-- //css files -->
-<link href="/TaYo/css/css_slider.css" type="text/css" rel="stylesheet" media="all">
+<link href="<%=root%>/css/css_slider.css" type="text/css" rel="stylesheet" media="all">
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
@@ -50,7 +50,12 @@ html {
 	font-style: "Open Sans";
 	font-size: "12px";
 }
-
+.headnav #left{
+	min-width: 7rem;
+}
+.headnav #right{
+	min-width: 5rem;
+}
 
 </style>
 <body>
@@ -59,20 +64,19 @@ html {
 	<!-- nav -->
 
 <!-- expand-xx xx이하까지는 세로정렬 -->
-	<nav class="navbar navbar-expand-md bg-light navbar-light">
+	<nav class="headnav navbar navbar-expand-md bg-light navbar-light">
 		<div class="container">
 			<!-- Brand -->
-
-			<a class="navbar-brand " href="<%=root%>/head_nav/?act=main"> <img id="logo" src="/TaYo/images/bus.png" width="50px" height="50px">TayoTayo
+			<a class="navbar-brand"  href="<%=root%>/head_nav/?act=main"> <img id="logo" src="<%=root%>/images/bus.png" width="50px" height="50px">TayoTayo
 			</a>
-			<ul class="navbar-nav mr-auto ">
-				<li class="nav-item"><a class="nav-link" href="<%=root%>/head_nav/?act=place">관광지/맛집 </a></li>
+			<ul class="navbar-nav mr-auto" id="left">
+				<li class="nav-item"><a class="nav-link" href="<%=root%>/head_nav/?act=place">지역추천 </a></li>
 				<li class="nav-item"><a class="nav-link" href="<%=root%>/head_nav/?act=recomend">일정추천</a></li>
 				<li class="nav-item"><a class="nav-link" href="<%=root%>/head_nav/?act=plan">일정 짜기</a></li>
 				<li class="nav-item"><a class="nav-link" href="<%=root%>/head_nav/?act=join">함께 타요</a></li>
 				<li class="nav-item "><a class="nav-link" href="">About</a></li>
 			</ul>
-			<ul class="navbar-nav ">
+			<ul class="navbar-nav" id="right">
 				<li class="nav-item"><a class="nav-link" href="">Login</a></li>
 				<li class="nav-item"><a class="nav-link" href="">회원가입</a></li>
 			</ul>
