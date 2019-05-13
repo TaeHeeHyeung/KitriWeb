@@ -8,6 +8,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 -->
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
 <title>TayoTayo</title>
 <meta name="viewport" content="width=device-width, initial-scale=1" charset="utf-8">
@@ -37,8 +38,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
 
 <!-- google fonts -->
 <link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
@@ -50,39 +52,53 @@ html {
 	font-style: "Open Sans";
 	font-size: "12px";
 }
-.headnav #left{
-	min-width: 7rem;
+
+@media (min-width: 1200px).container {
+    max-width: 1140px;
 }
-.headnav #right{
-	min-width: 5rem;
+@media (min-width: 992px).container {
+    max-width: 960px;
+}
+@media (min-width: 768px).container {
+    max-width: 720px;
+}
+@media (min-width: 576px).container {
+    max-width: 540px;
+}
+.container {
+	width: 100%;
+	padding-right: 15px;
+	padding-left: 15px;
+	margin-right: auto;
+	margin-left: auto;
 }
 
 </style>
 <body>
-	<!-- header -->
 
-	<!-- nav -->
-
-<!-- expand-xx xx이하까지는 세로정렬 -->
-	<nav class="headnav navbar navbar-expand-md bg-light navbar-light">
+	<!-- example 1 - using absolute position for center -->
+	<nav class="navbar navbar-expand-md bg-light navbar-light "> <!-- bg-light -->
 		<div class="container">
-			<!-- Brand -->
-			<a class="navbar-brand"  href="<%=root%>/head_nav/?act=main"> <img id="logo" src="<%=root%>/images/bus.png" width="50px" height="50px">TayoTayo
+			<a class="navbar-brand" href="<%=root%>/head_nav/?act=main"> 
+			<img id="logo" src="<%=root%>/images/bus.png" width="50px" height="50px"> TayoTayo
 			</a>
-			<ul class="navbar-nav mr-auto" id="left">
-				<li class="nav-item"><a class="nav-link" href="<%=root%>/head_nav/?act=place">지역추천 </a></li>
-				<li class="nav-item"><a class="nav-link" href="<%=root%>/head_nav/?act=recomend">일정추천</a></li>
-				<li class="nav-item"><a class="nav-link" href="<%=root%>/head_nav/?act=plan">일정 짜기</a></li>
-				<li class="nav-item"><a class="nav-link" href="<%=root%>/head_nav/?act=join">함께 타요</a></li>
-				<li class="nav-item "><a class="nav-link" href="">About</a></li>
-			</ul>
-			<ul class="navbar-nav" id="right">
-				<li class="nav-item"><a class="nav-link" href="">Login</a></li>
-				<li class="nav-item"><a class="nav-link" href="">회원가입</a></li>
-			</ul>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsingNavbar">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="navbar-collapse collapse" id="collapsingNavbar">
+				<ul class="navbar-nav">
+					<li class="nav-item active"><a class="nav-link" href="<%=root%>/head_nav/?act=join">지역추천</a></li>
+					<li class="nav-item"><a class="nav-link" href="<%=root%>/head_nav/?act=join">일정추천</a></li>
+					<li class="nav-item"><a class="nav-link" href="<%=root%>/head_nav/?act=join" data-toggle="collapse">일정짜기</a></li>
+					<li class="nav-item"><a class="nav-link" href="<%=root%>/head_nav/?act=join" data-toggle="collapse">지역추천</a></li>
+				</ul>
+				<ul class="navbar-nav ml-auto">
+					<li class="nav-item"><a class="nav-link" href="<%=root%>/head_nav/?act=join" data-target="#myModal" data-toggle="modal">로그인</a></li>
+					<li class="nav-item"><a class="nav-link" href="<%=root%>/head_nav/?act=join" data-target="#myModal" data-toggle="modal">회원가입</a></li>
+				</ul>
+			</div>
 		</div>
 	</nav>
-
 
 
 	<!-- //nav -->

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>select.html</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
+<style type="text/css">
+#engine, #body {
+	display: none;
+}
+</style>
+<script type="text/javascript">
+	$(function() {
+		$("#car").change(function() {
+			//id가 enginee인 객체 찾기
+			//var $enginee = $("#engine");
+			var $enginObj = $("#div2");
+			var data = '<select id ="engine">';
+			//선택된 객체의 value값이 변할때만 호출된다.
+			var car = $(this).val();
+			if (car == '소나타') {
+				data += '<option>Smartstream G2.0</option>';
+				data += '</select>';
+				//innerHtml (javascript)
+				$enginObj.html(data);
+				
+				/* $enginObj.css('display', 'inline-block'); */
+				var $selectObj = $enginObj.children("#engine"); //자식 만 찾음
+				//var $selectObj = $enginObj.find("#engine"); //자식 만 찾음
+				$selectObj.show();
+				/* var $selectObj = $engine.find("#engine"); //후손까지 다 찾음 */
+				
+			} else if (car == '펠리세이드') {
+				data += '<option>가솔린 3.8</option>';
+				data += '<option>디젤 2.2</option>';
+				data += '</select>';
+				$enginObj.html(data);
+				//$enginee.css('display', 'inline-block');
+				//$engine.show(); //display 속성값 유지
+				var $selectObj = $enginObj.find("#engine"); //자식 만 찾음
+				$selectObj.show();
+			} else {
+				//$enginee.css('display', 'none');
+				//$engine.hide();
+				var $selectObj = $engine.find("#engine"); //자식 만 찾음
+				$selectObj.hide();
+			}
+		});
+/* 		$("#engine").click(function() {
+			alert($(this).val());
+		}); */
+		// 향후 추가될 dom에 이벤트 핸들러 등록
+		$("#div2").on("change","#engine", function() {
+			alert($(this).val());
+		});
+		
+	});
+
+	//id 가 engine인 객체의click이벤트가 핸들러
+	//할일 : value속성값을 경고창에 출력
+</script>
+</head>
+
+
+<body>
+	<div>
+		<!-- 	자동차종류 -->
+		<select id="car">
+			<option>선택하세요.</option>
+			<option>소나타</option>
+			<!-- Smartstream G2.0 -->
+			<option>펠리세이드</option>
+			<!-- 가솔린 3.8, 디젤 2.2 -->
+		</select>
+
+	</div >
+	<!-- 	엔진종류 -->
+	<div id="div2">
+
+	</div>
+	<!-- 	바디타입 -->
+	<div>
+		<select id="body">
+		</select>
+	</div>
+</body>
+</html>

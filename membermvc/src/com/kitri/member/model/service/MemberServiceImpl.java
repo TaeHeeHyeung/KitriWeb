@@ -2,9 +2,9 @@ package com.kitri.member.model.service;
 
 import java.util.*;
 
-import com.kitri.memb.model.dao.MemberDao;
-import com.kitri.memb.model.dao.MemberDaoImple;
 import com.kitri.member.model.*;
+import com.kitri.member.model.dao.MemberDao;
+import com.kitri.member.model.dao.MemberDaoImple;
 
 import sun.security.jca.GetInstance;
 

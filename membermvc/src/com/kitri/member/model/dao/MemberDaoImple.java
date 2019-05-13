@@ -1,4 +1,4 @@
-package com.kitri.memb.model.dao;
+package com.kitri.member.model.dao;
 
 import java.sql.*;
 import java.util.*;
