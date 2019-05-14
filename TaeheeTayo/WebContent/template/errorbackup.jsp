@@ -1,5 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
+<%
+	String root = request.getContextPath();
+%>
+
 <!--
 author: W3layouts
 author URL: http://w3layouts.com
@@ -7,12 +11,15 @@ License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 -->
 <!DOCTYPE html>
-<html lang="ko">
-
+<html lang="en">
 <head>
-<title>TayoTayo</title>
-<meta name="viewport" content="width=device-width, initial-scale=1" charset="utf-8">
-<script>
+<title>Grand Tour Travel Category Flat Bootstrap Responsive Web Template | Home :: w3layouts</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8">
+<meta name="keywords" content="Grand Tour Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+
+<!-- <script>
 	addEventListener("load", function() {
 		setTimeout(hideURLbar, 0);
 	}, false);
@@ -20,51 +27,75 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	function hideURLbar() {
 		window.scrollTo(0, 1);
 	}
-</script>
-<%
-	String root = request.getContextPath(); //server.xml의 context
-%>
+</script> -->
+
+<!-- To be fixed modal window is not opened... -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+
 <!-- css files -->
-<!-- <link href="<%=root%>/css/bootstrap.css" rel='stylesheet' type='text/css' /> -->
+<link href="/TaYo/css/bootstrap.css" rel='stylesheet' type='text/css' />
 <!-- bootstrap css -->
-<!-- <link href="<%=root%>/css/style.css" rel='stylesheet' type='text/css' /> -->
+<link href="/TaYo/css/style.css" rel='stylesheet' type='text/css' />
 <!-- custom css -->
-<!-- <link href="<%=root%>/css/font-awesome.min.css" rel="stylesheet"> -->
+<link href="/TaYo/css/font-awesome.min.css" rel="stylesheet">
 <!-- fontawesome css -->
 
 <!-- //css files -->
-<link href="<%=root%>/css/css_slider.css" type="text/css" rel="stylesheet" media="all">
-
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-
+<link href="/TaYo/css/css_slider.css" type="text/css" rel="stylesheet" media="all">
 
 <!-- google fonts -->
 <link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
 <link href="//fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 <!-- //google fonts -->
-</head>
+
 <style type="text/css">
-html {
-	font-style: "Open Sans";
-	font-size: "12px";
+@media ( min-width : 1200px).container {
+	max-width
+	:
+	 
+	1140
+	px
+	;
+	
+
 }
 
-@media (min-width: 1200px).container {
-    max-width: 1140px;
+@media ( min-width : 992px).container {
+	max-width
+	:
+	 
+	960
+	px
+	;
+	
+
 }
-@media (min-width: 992px).container {
-    max-width: 960px;
+
+@media ( min-width : 768px).container {
+	max-width
+	:
+	 
+	720
+	px
+	;
+	
+
 }
-@media (min-width: 768px).container {
-    max-width: 720px;
+
+@media ( min-width : 576px).container {
+	max-width
+	:
+	 
+	540
+	px
+	;
+	
+
 }
-@media (min-width: 576px).container {
-    max-width: 540px;
-}
+
 .container {
 	width: 100%;
 	padding-right: 15px;
@@ -72,15 +103,19 @@ html {
 	margin-right: auto;
 	margin-left: auto;
 }
-
 </style>
+</head>
+
+
+
 <body>
 
-	<!-- example 1 - using absolute position for center -->
-	<nav class="navbar navbar-expand-md bg-light navbar-light "> <!-- bg-light -->
+	<!-- header -->
+	<!-- 	<header> -->
+	<nav class="navbar navbar-expand-md bg-light navbar-light ">
+		<!-- bg-light -->
 		<div class="container">
-			<a class="navbar-brand" href="<%=root%>/head_nav/?act=main"> 
-			<img id="logo" src="<%=root%>/images/bus.png" width="50px" height="50px"> TayoTayo
+			<a class="navbar-brand" href="<%=root%>/head_nav/?act=main"> <img id="logo" src="<%=root%>/images/bus.png" width="50px" height="50px"> TayoTayo
 			</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsingNavbar">
 				<span class="navbar-toggler-icon"></span>
@@ -99,8 +134,5 @@ html {
 			</div>
 		</div>
 	</nav>
-
-
-	<!-- //nav -->
-
+	<!-- </header> -->
 	<!-- //header -->

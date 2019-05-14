@@ -10,7 +10,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <html lang="ko">
 
 <head>
-<title>TayoTayo</title>
+<title>TayoTayo2</title>
 <meta name="viewport" content="width=device-width, initial-scale=1" charset="utf-8">
 <script>
 	addEventListener("load", function() {
