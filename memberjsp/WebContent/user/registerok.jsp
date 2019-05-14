@@ -3,11 +3,13 @@
 
 <%@ include file="/template/header.jsp"%>
 
+	
+	
 <%
 	String name = request.getParameter("name");
 	//인코딩 깨지는 유형
 	//1. 코드에 치는 한글
-	//<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+	//\<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%\>
 	//2. get => byte 처리 필요 
 	//3. post => requst setencoding 지정
 	//4. url 쿼리스트링 직접 타이핑
