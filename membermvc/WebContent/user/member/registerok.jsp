@@ -4,7 +4,6 @@
 
 <%
 	MemberDetailDto memberDetailDto = (MemberDetailDto) request.getAttribute("userInfo");
-
 	String name = request.getParameter("name");
 	//인코딩 깨지는 유형
 	//1. 코드에 치는 한글

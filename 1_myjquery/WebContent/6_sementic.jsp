@@ -1,9 +1,13 @@
+<%@page contentType="text/html;charset=utf-8"%>
+
+
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>semantic.html</title>
+<title>semantic.jsp</title>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
 <style>
 header {
 	background-image: url("images/logo.png");
@@ -31,22 +35,33 @@ footer {
 
 <script>
 	//dom 트리에서 nav> ul> li > a 객체들 찾기
-	 $(function() {
-		var aArr =$("nav>ul>li>a");
-		$(aArr).click(function(){
+	$(function() {
+		var aArr = $("nav>ul>li>a");
+		$(aArr).click(function() {
+			console.log("called");
 			var vurl = $(this).attr("href");
-			 //{} 객체정의 
-			$.ajax({
-				url: vurl,
-				method:'get',
-				success:function(result){
-					$("section").html(result);
-				}
-			});
+			if (vurl == 'logout') {
+				$.ajax({
+					url : vurl,
+					method : "get",
+					success : function(result) {
+						location.href = "6_sementic.jsp"
+					}
+
+				});
+			} else {
+				$.ajax({
+					url : vurl,
+					method : 'post',
+					success : function(result) {
+						$("section").html(result);
+					}
+				});
+			}
+
 			return false;
 		});
-		
-	}); 
+	});
 </script>
 </head>
 
@@ -56,11 +71,7 @@ footer {
 	</header>
 	<nav>
 		메뉴
-		<ul>
-			<!-- login.html -->
-			<li><a href="login.html">로그인</a></li>
-			<li><a href="signup.html">가입</a></li>
-		</ul>
+		<jsp:include page="menu.jsp"/>
 	</nav>
 	<section>본문</section>
 	<article></article>

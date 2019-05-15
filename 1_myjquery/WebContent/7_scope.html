@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>scope.html</title>
+<script>
+	var a;
+	console.log(typeof (a));
+	console.log(a + 1);
+
+	var a = 10;
+	console.log(a);
+
+	var b = function() {
+		var lv = 'hello';
+		gv = "global;";
+		for (var i = 0; i < 10; i++) {
+			console.log(i + ", " + lv + "," + gv);
+		}
+		console.log("in function lv=" + lv);
+		console.log("in function gv=" + gv);
+		console.log("in function i=" + i);
+	}
+	console.log(typeof (b));
+	console.log(b);
+	b();
+	//console.log("out function lv ="+lv);
+	console.log("out function gv =" + gv);
+</script>
+
+<script>
+	 /* window.addEventListener("load", function() {
+		var arr = document.querySelectorAll("button");
+		for (var i = 0; i < arr.length; i++) {
+			var btObj = arr[i];
+			btObj.addEventListener("click", function() {
+				alert(i + "번째 버튼이 클릭되었습니다."); //i는 arr.length가 들어가진다.
+			});
+		}
+	}); */ 
+	window.addEventListener("load", function() {
+		var arr = document.querySelectorAll("button");
+		for (var i = 0; i < arr.length; i++) {
+			var btObj = arr[i];
+			(function(j) { //버튼이 클릭되지 않아도 바로 실행 시켜준다 .
+				btObj.addEventListener("click", function() {
+					var aObj = document.querySelector("input[name=a]");
+					var bObj = document.querySelector("input[name=b]");
+					var aNum = parseInt(aObj.value);
+					var bNum = parseInt(bObj.value);
+					//alert(j + "번째 버튼이 클릭되었습니다.");
+					switch (j) {
+						case 0:
+							alert(aNum + bNum);
+							break;
+						case 1:
+							alert(aNum - bNum);
+							break;
+						case 2:
+							alert(aNum * bNum);
+							break;
+						case 3:
+							alert(aNum / bNum);
+							break;
+					}
+				});
+			})(i);
+		}
+	});
+</script>
+
+</head>
+<body>
+	<input type="text" name="a">
+	<input type="text" name="b">
+	<br>
+	<button>+</button>
+	<button>-</button>
+	<button>*</button>
+	<button>/</button>
+
+</body>
+</html>
