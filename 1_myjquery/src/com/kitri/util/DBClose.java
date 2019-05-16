@@ -4,7 +4,7 @@ import java.sql.*;
 
 public class DBClose {
 
-	public static void close(Connection conn, PreparedStatement pstmt, ResultSet rs) {
+	public static void close(Connection con, PreparedStatement pstmt, ResultSet rs) {
 		try {
 			if (rs != null) {
 				rs.close();
@@ -12,8 +12,8 @@ public class DBClose {
 			if (pstmt != null) {
 				pstmt.close();
 			}
-			if (conn != null) {
-				conn.close();
+			if (con != null) {
+				con.close();
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();

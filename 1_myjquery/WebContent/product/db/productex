@@ -1,0 +1,50 @@
+product 상품목록(자)
+prod_no		prod_name	prod_detail		prod_price		prod_cate
+(varchar2)	char1		varchar2(30)	number(5)		varchar2(50)
+										value>=0
+상품번호 		분류번호		제조일자 		 		상품명 가격	상세정보
+001			D			아메리카노				2500		...           
+002			D			아이스아메리카노		2500		...
+003			D			라떼					3000
+004			F			치즈케익				4000
+
+product_cate상품분류(부)
+cate_no	cate_name 
+char1	varchar2(30)
+분류번호	분류명
+D		음료
+F		음식
+G		상품
+
+부모엔티티 (먼저 DB에 들어갈 값)
+자식엔티티 (부모엔티티를 참조하기 때문에 후에 DB에 들어갈 값)
+
+
+
+
+pk는 가장 앞에 놓아두어야 검색속도가 빨라진다.
+
+사번 	주민등록번호
+1	9204562
+2	9301654
+3	9304562
+		
+주민등록번호는pk로 놓으면 퇴사후 재취업하는사람을 관리할 수 없기 때문에
+사번을 pk로 놓아야한다.
+
+
+
+전체 상품목록 - 카테고리번호로 오름차순 정렬
+--select cate_no, cate_name,
+--	prod_no, prod_name, prod_price, prod_detail, prod_cate
+-- from product Natural join product_category
+-- from product join product_category using(prod_cate)
+
+select pc.cate_no, pc.cate_name,
+	p.prod_no, p.prod_name, p.prod_price, p.prod_detail, p.prod_cate
+ from product p join product_category pc
+ on p.prod_cate = pc.cate_no
+ order by cate_no, prod_name;
+
+
+카테고리에 해당 상품목록
