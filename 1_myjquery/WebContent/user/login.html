@@ -13,12 +13,12 @@
 		var $loginform = $("#loginform");
 		$loginform.submit(function() {
 			$.ajax({
-				url : '/1_myjquery/login',
+				url : 'login',
 				method : 'post',
 				data : $("form").serialize(),
 				success : function(result) {
 					if (result.trim() == '1') {//성공
-						location.href = "/1_myjquery/6_sementic.jsp";
+						location.href = "/1_myjquery/product/sementic.jsp";
 						alert("성공 " + result.trim());
 					} else {//실패
 						alert("실패 " + result.trim());

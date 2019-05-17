@@ -6,6 +6,7 @@ import java.util.List;
 
 import com.kitri.dto.Product;
 import com.kitri.dto.ProductCategory;
+import com.kitri.exception.NotFoundException;
 import com.kitri.util.DBClose;
 import com.kitri.util.DBConnection;
 
@@ -77,7 +78,6 @@ public class ProductDAO {
 					" from product p join product_category pc\n" + 
 					" on p.prod_cate = pc.cate_no\n" + 
 					" where prod_no=?";
-					
 			
 			pstmt = con.prepareStatement(selectAllSQL);
 			pstmt.setInt(1, Integer.parseInt(no));
@@ -94,6 +94,8 @@ public class ProductDAO {
 
 				ProductCategory pc = new ProductCategory(cate_no, cate_name);
 				return new Product(prod_no, prod_name, prod_price, prod_detail, pc);
+			}else{
+				 return null;
 			}
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();

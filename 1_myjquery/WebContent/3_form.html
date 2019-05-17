@@ -16,9 +16,10 @@
 				$tObj.focus();
 				return false;
 			} else {
-				alert("전송되었습니다.");
+				
 				$formObj.attr("action", "http://www.naver.com");
 				$formObj.attr("method", "post");
+				alert("전송되었습니다.");
 				/* $formObj.submit(); //일반 버튼에서 사용*/
 			}
 		});

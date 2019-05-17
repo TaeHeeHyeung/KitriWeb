@@ -14,11 +14,11 @@
 			$.ajax({
 				url : "a.jsp",//"productlist.do",
 				method : "post",
-				/* data: 'id='+id+'&name='+name, */
- 				/*data : {
-					id : id,
-					name : name
-				}, */
+// 				 data: 'id='+id+'&name='+name, 
+//  				data : {
+// 					id : id,
+// 					name : name
+// 				}, 
 				data: $("form").serialize(), //form의 name과 value를 자동생성해준다.
 				success : function(result) {
 					console.log(result.trim());

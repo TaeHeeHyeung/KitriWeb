@@ -6,6 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>semantic.jsp</title>
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
 
 <style>
@@ -49,12 +50,15 @@ footer {
 					}
 
 				});
-			} else {
+			}else {
 				$.ajax({
 					url : vurl,
-					method : 'post',
+					method : 'get',
 					success : function(result) {
+						console.log(result);
 						$("section").html(result);
+					},error:function(){
+						console.log("error");
 					}
 				});
 			}
@@ -71,7 +75,7 @@ footer {
 	</header>
 	<nav>
 		메뉴
-		<jsp:include page="menu.jsp"/>
+		<jsp:include page="/product/menu.jsp"/>
 	</nav>
 	<section>본문</section>
 	<article></article>

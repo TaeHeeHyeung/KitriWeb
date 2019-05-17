@@ -11,7 +11,11 @@ $(function(){
 	//javascript 객체용 배열이 리턴된다. jsp객체가 아니다.
 	var chkArr = $("div>input[type=checkbox]");
 	var allObj = chkArr[0];
-	var $allObj = $(allObj)
+	var $allObj = $(allObj);
+	console.log(chkArr);
+	console.log(chkArr[0]);
+	console.log($(chkArr[0]));
+	
 // 	allObj.click 사용 불가  (javascript 이기 때문에)
 	$allObj.click(function() { //jsp 언어로 변환
 		for (var i = 1; i < chkArr.length; i++) {
@@ -19,7 +23,7 @@ $(function(){
 // 			$(chkArr[i]).attr("checked", true); //X
 // 			$(chkArr[i]).prop("checked", true); //O
 // 			$(chkArr[i]).prop("checked", false); //O
-			$(chkArr[i]).prop("checked", $allObj.attr("checked"));
+ 			$(chkArr[i]).prop("checked", $allObj.attr("checked"));
 		}
 	});
 });

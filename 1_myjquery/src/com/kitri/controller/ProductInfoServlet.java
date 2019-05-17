@@ -19,23 +19,25 @@ import com.kitri.util.MoveUrl;
 @WebServlet("/productinfo")
 public class ProductInfoServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	ProductService ps;
+
+	@Override
+	public void init() throws ServletException {
+		ps = new ProductService();
+	}
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 
 		String no = request.getParameter("no");
-		
-		ProductService ps = new ProductService();
-		Product product = ps.findByNo(no);
-		
-		System.out.println("ProductInfoServlet" +product.getProd_name());
-		
-		request.setCharacterEncoding("UTF-8");
+		Product product = ps.findByNo(no);		
+
+//		request.setCharacterEncoding("UTF-8");
 		request.setAttribute("product", product);
-		
+
 		String path = "/product/productinforesult.jsp";
 
 		MoveUrl.forward(response, request, path);
-		
 	}
 
 }

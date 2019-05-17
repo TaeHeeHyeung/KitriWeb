@@ -3,7 +3,6 @@
 <%@page import="java.util.List"%>
 <%@page import="com.sun.xml.internal.txw2.Document"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -59,6 +58,11 @@
 				ProductCategory pc = p.getProductCategory();
 				String cate = pc.getCate_name();
 		%>
+<!-- 		
+		click이벤트 a태그를 활용해 href에 넣어도됨
+			번호를 span으로 묶어 찾기
+
+ -->
 		<div class="col-sm" id="<%=no%>">
 			<img src="/1_myjquery/product/img/<%=no%>.png"><br> 분류
 			<%=cate%><br> 번호:
