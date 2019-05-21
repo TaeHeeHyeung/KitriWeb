@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
-
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
 
 <title>semantic.jsp</title>
 <style>
@@ -14,17 +14,21 @@ header{background-image: url("images/logo.png");
        background-position: right;
        height : 100px;
 }
-nav{  text-align: center;
+nav{  
+      text-align: center;
       background-color: #ACF3FF;
+      font-weight: bold;
 }
 nav>ul{list-style: none;
        padding: 0px;
        margin : 10px;
 }
-nav>ul>li{display: inline-block;       
+nav>ul>li{
+	display: inline-block;       
 }
-nav>ul>li>a{text-decoration: none;
-            color: #000000;
+nav>ul>li>a{
+	text-decoration: none;
+	color: #000000;
 }
 nav>ul>li>a:hover{ text-decoration: none;
 		background-color:yellow;
@@ -36,7 +40,22 @@ footer{
  background-color: #b4b4b4;
 }
 </style>
+<style type="text/css">
+div.product_list_json{
+display:none;
+}
+div.product_list_json ul > li.menuDataSet{
+    float: left;
+    position: relative;
+    margin: 5px;
+    display:none;
+}
+div.product_list_json ul{
+  list-style: none;
+}
+</style>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
 <script>
 $(function(){
 	//dom트리에서 nav>ul>li>a객체들 찾기
@@ -91,16 +110,17 @@ $(function(){
 			$.ajax({
 				url: vurl,
 				method:'get',
-				success:function(result){
-					$("section").html(result);
+				success: function(result){
+					$("section").html(result.trim());
 				}
 			});
-		}
+		}//end else
 		return false;
-	});
-	});
+	});//end click
+});//end $function
 </script>
 </head>
+
 <body>
 <header><h1>MOON BUCKS</h1></header>
 <nav>메뉴
@@ -109,20 +129,7 @@ $(function(){
 <section>본문</section>
 <footer>사업자  대표 : 오문정 </footer>
 <%--start productlist--%>
-<style>
-div.product_list_json{
-display:none;
-}
-div.product_list_json ul > li.menuDataSet{
-    float: left;
-    position: relative;
-    margin: 5px;
-    display:none;
-}
-div.product_list_json ul{
-  list-style: none;
-}
-</style>
+
 <script>
 $(function(){
   var $aObj = $("div.product_list_json>ul>li.menuDataSet dl>dt>a");

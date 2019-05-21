@@ -1,0 +1,7 @@
+insert into product_category values('D','음료');
+insert into product_category values('F','음식');
+
+insert into product values('001', '아메리카노',2500,'','D');
+insert into product values('002', '아이스아메리카노',3000,'','D');
+insert into product values('003', '라떼',3000,'','D');
+insert into product values('004', '케이크',4000,'','F');

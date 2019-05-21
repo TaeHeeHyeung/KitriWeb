@@ -38,16 +38,22 @@ $(function(){
 		}); */
 		return false;
 	});
+	/* body > section > div > table > tbody > tr:nth-child(3) > td > button.addorder */
 	var $btAddOrder = $("div.viewcartresult>table tr>td>button.addorder");
 	$btAddOrder.click(function(){
-
 		alert("주문하기 클릭!");
-		/* $.ajax({
+		 $.ajax({
 			url:"addorder",
 			method:"get",
 			success:function(result){
+				console.log(result);
+				if(result.trim()=='-1'){ //주문실패
+					alert("주문실패");
+				}else if(result.trim()=='1'){
+					alert("주문성공");
+				}
 			}
-		}); */
+		}); 
 		return false;
 	});
 });
@@ -77,7 +83,7 @@ Map<Product,Integer> rc = (Map)request.getAttribute("rcart");
        <button style="margin:10px;" class="removecart">장바구니 비우기</button>
    <%if(session.getAttribute("loginInfo") != null){ //로그인한 경우만 주문하기 버튼보여주기
    %>
-       <button style="margin:10px;"class="addorder">주문하기</button>
+       <button style="margin:10px;" class="addorder">주문하기</button>
    <%}%>       
      </td>
    </tr>

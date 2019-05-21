@@ -1,0 +1,54 @@
+	
+select * from product_category;
+
+select prod_no, prod_name, prod_price, prod_detail, prod_cate
+    from product ;
+
+select cate_no, cate_name,
+	prod_no, prod_name, prod_price, prod_detail, prod_cate
+    from product join product_category 
+     on prod_cate = cate_no;
+--     from product join product_category using (prod_cate);
+-- from product Natural join product_category;
+
+
+--D카테고리에 해당 상품목록
+select pc.cate_no, pc.cate_name,
+	p.prod_no, p.prod_name, p.prod_price, p.prod_detail, p.prod_cate
+ from product p join product_category pc
+ on p.prod_cate = pc.cate_no
+ where cate_no='D'
+ order by cate_no, prod_name;
+ 
+ --D카테고리에 해당 총삼품가격을 출력하시오
+ select sum(p.prod_price)
+ from product p join product_category pc
+ on p.prod_cate=pc.cate_no
+ where cate_no ='D';
+ 
+-- 카테고리별 총삼품가격을 출력하시오
+ select cate_name, sum(p.prod_price)
+ from product p;
+ 
+ commit;
+ select * from product;       
+
+
+--D카테고리에 해당 상품목록
+select pc.cate_no, pc.cate_name,
+	p.prod_no, p.prod_name, p.prod_price, p.prod_detail, p.prod_cate
+ from product p join product_category pc
+ on p.prod_cate = pc.cate_no
+ where prod_no='?'
+ 
+ 
+ --주문상세 주분정보
+ Create Sequence order_seq;
+ insert into order_info(order_no, order_id)
+values(order_seq.nextVal, 'test');
+
+insert into order_line(order_no, order_prod_no, order_quantity) 
+values(order_seq.currval,'003',1);
+
+insert into order_line(order_no, order_prod_no, order_quantity) 
+values(order_seq.currval,'002',1);
