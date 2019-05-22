@@ -27,7 +27,7 @@
 				<c:forEach var="line" items="${lines }" varStatus="obj">
 					<c:set var="p" value="${line.product}" />
 					<c:if test="${obj.index>0}">
-						<tr>
+						<tr></tr>
 					</c:if>
 
 					<td>${p.prod_no }</td>

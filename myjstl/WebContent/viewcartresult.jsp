@@ -61,6 +61,10 @@ $(function(){
 	});
 });
 </script>
+
+<%-- <fmt:formatNumber value="${p.prod_price}" type="currency" currencySymbol ="\" /> --%>
+<%-- &#65510;<fmt:formatNumber value= "${p.prod_price}" pattern="#,##0"/> --%>
+
 <div class="viewcartresult">
 <c:set var ="rc" value="${requestScope.rcart}"/>
 
