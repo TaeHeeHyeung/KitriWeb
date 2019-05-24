@@ -16,6 +16,14 @@ public class RepBoard {
 	private String board_password;// 비밀번호
 	private int board_viewcount;// 조회수
 
+	
+	@Override
+	public String toString() {
+		return "RepBoard [board_seq=" + board_seq + ", parent_seq=" + parent_seq + ", board_subject=" + board_subject
+				+ ", board_writer=" + board_writer + ", board_contents=" + board_contents + ", board_date=" + board_date
+				+ ", board_password=" + board_password + ", board_viewcount=" + board_viewcount + "]";
+	}
+
 	public RepBoard() {
 		super();
 	}

@@ -1,4 +1,4 @@
-package controller;
+package control;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -16,12 +16,12 @@ import com.kitri.util.MoveUrl;
  * Servlet implementation class WriteBoard
  */
 @WebServlet("/writeboard")
-public class WriteBoard extends HttpServlet {
+public class WriteBoardServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	private RepBoardService service;
 
-	public WriteBoard() {
+	public WriteBoardServlet() {
 		service = new RepBoardService();
 	}
 

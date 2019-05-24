@@ -1,6 +1,8 @@
 package com.kitri.dao;
 
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 import com.kitri.dto.RepBoard;
 import com.kitri.exception.AddException;
@@ -8,6 +10,45 @@ import com.kitri.util.DBClose;
 import com.kitri.util.DBConnection;
 
 public class RepBoardDAO {
+	
+	public List<RepBoard> select(int startRow, int endRow) {
+		List<RepBoard> list = new ArrayList<RepBoard>();
+		String selectByRowsSQL = "SELECT * "+
+		"FROM (SELECT rownum r, repboard.* "+
+		"		FROM repboard "+
+		"		START WITH parent_seq=0 "+
+		"		CONNECT BY PRIOR board_seq = parent_seq "+
+		"		ORDER SIBLINGS BY board_seq DESC) "+
+		"WHERE r BETWEEN ? AND ?";
+		Connection con = null;
+		PreparedStatement pstmt= null;
+		ResultSet rs = null;
+		
+		try {
+			con= DBConnection.makeConnection();
+			pstmt =con.prepareStatement(selectByRowsSQL);
+			pstmt.setInt(1, startRow);
+			pstmt.setInt(2, endRow);
+			rs= pstmt.executeQuery();
+			while(rs.next()) {
+				RepBoard repBoard = new RepBoard();
+				repBoard.setBoard_seq(rs.getInt("board_seq"));
+				repBoard.setParent_seq(rs.getInt("parent_seq"));
+				repBoard.setBoard_subject(rs.getString("board_subject"));
+				repBoard.setBoard_writer(rs.getString("board_writer"));
+				repBoard.setBoard_contents(rs.getString("board_contents"));
+				repBoard.setBoard_date(rs.getTimestamp("board_date"));
+				repBoard.setBoard_viewcount(rs.getInt("board_viewcount"));
+				list.add(repBoard);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally {
+			DBClose.close(con, pstmt, rs);
+		}
+		return list;
+		
+	}
 	public String insert(RepBoard repBoard) throws AddException{
 		String insertSQL = 
 	"insert into repboard("
@@ -35,8 +76,33 @@ public class RepBoardDAO {
 			DBClose.close(con, pstmt);
 		}
 	}
-//	public static void main(String[] args) {
-//		RepBoardDAO dao = new RepBoardDAO();
+	
+	public int selectTotalCnt() {
+		String selectTotalCntSQL = "SELECT count(*) FROM repboard";
+		Connection con =null;
+		PreparedStatement pstmt=null;
+		ResultSet rs = null;
+		int totalCnt=-1;
+		try {
+			con = DBConnection.makeConnection();
+			pstmt = con.prepareStatement(selectTotalCntSQL);
+			rs = pstmt.executeQuery();
+			if(rs.next()) {
+				totalCnt = Integer.parseInt(rs.getString(1));
+			}
+			return totalCnt;
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally {
+			DBClose.close(con, pstmt, rs);
+		}
+		return totalCnt;
+		
+	}
+	
+	public static void main(String[] args) {
+		RepBoardDAO dao = new RepBoardDAO();
 //		RepBoard repBoard = new RepBoard();
 //		repBoard.setBoard_subject("테스트제목");
 //		repBoard.setBoard_writer("test");
@@ -48,7 +114,13 @@ public class RepBoardDAO {
 //		} catch (AddException e) {
 //			e.printStackTrace();
 //		}
-//		
-//	}
+		List<RepBoard> list= dao.select(11, 50);
+		
+		for(RepBoard board :list) {
+			System.out.println(board.toString());
+			
+		}
+	}//end main
+	
 	 
 }
