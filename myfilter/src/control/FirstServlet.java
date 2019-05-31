@@ -19,14 +19,14 @@ public class FirstServlet extends HttpServlet {
      */
     public FirstServlet() {
         super();
-        System.out.println("FirstServlet객체생성됨");
+//        System.out.println("FirstServlet객체생성됨");
     }
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("FirstServlet의 doGet()호출됨");
+//		System.out.println("FirstServlet의 doGet()호출됨");
 	}
 
 	

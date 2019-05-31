@@ -20,8 +20,8 @@ public class MySessionAttributeListener implements HttpSessionAttributeListener 
     public void attributeAdded(HttpSessionBindingEvent event)  {
     	String attrName = event.getName();
     	if("loginInfo".equals(attrName)) {
-    		System.out.println("MySessionAttributeListener "+ event.getValue()+"님이 로그인하셨습니다.");
-    		System.out.println("MySessionAttributeListener 로그인된 사용자수 :"+(++loginCnt)+"명");
+//    		System.out.println("MySessionAttributeListener "+ event.getValue()+"님이 로그인하셨습니다.");
+//    		System.out.println("MySessionAttributeListener 로그인된 사용자수 :"+(++loginCnt)+"명");
     	}
     }
 
@@ -29,8 +29,8 @@ public class MySessionAttributeListener implements HttpSessionAttributeListener 
     public void attributeRemoved(HttpSessionBindingEvent event)  {
     	String attrName = event.getName();
     	if("loginInfo".equals(attrName)) {
-    		System.out.println("MySessionAttributeListener "+ event.getValue()+"님이 로그아웃하였습니다..");
-    		System.out.println("MySessionAttributeListener 로그인된 사용자수 :"+(--loginCnt)+"명");
+//    		System.out.println("MySessionAttributeListener "+ event.getValue()+"님이 로그아웃하였습니다..");
+//    		System.out.println("MySessionAttributeListener 로그인된 사용자수 :"+(--loginCnt)+"명");
     	}
     	
     }
