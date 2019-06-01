@@ -27,7 +27,7 @@
 		}else{
 			var params ="act=zipsearch&doro=" + doro;
 			//괜찮은 에러 실행시점에는 임포트에의해 정상 실행됨
-			sendRequest("<%=root%>/user", params, zipsearchResult, "GET");
+			sendRequest("${pageContext.request.contextPath}/user", params, zipsearchResult, "GET");
 			window.console.log("zipsearchResult 검색결과 전달합니다.");
 		}
 	}
@@ -59,7 +59,7 @@
 				//에러페이지
 			}
 		} else {
-			ziplistView.innerHTML="<img src='<%=root%>/img/loading.gif' width='80'>";
+			ziplistView.innerHTML="<img src='${pageContext.request.contextPath}/img/loading.gif' width='80'>";
 			console.log("이미지를 띄웁니다.");
 			//로딩중...
 		}
