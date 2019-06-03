@@ -1,4 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" import="com.kitri.member.dao.MemberDetailDto"%>
+<%@page import="com.kitri.member.model.MemberDetailDto"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
 <%@ include file="/template/header.jsp"%>
 

@@ -1,5 +1,6 @@
+<%@page import="com.kitri.member.model.MemberDto"%>
 <%@page import="com.kitri.util.MoveUrl"%>
-<%@page import="com.kitri.member.dao.MemberDto"%>
+
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ include file="/template/header.jsp"%>
 <script type="text/javascript">
@@ -8,8 +9,7 @@ function deleteMember(){
 	//confirm: return true false
 	//property 
 	if(confirm("정말로 탈퇴?")){
-		document.location.href= "<%=root%>
-	/user?act=deletemember";
+		document.location.href="<%=root%>/user?act=deletemember";
 		}
 	}
 </script>
