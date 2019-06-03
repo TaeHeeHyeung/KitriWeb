@@ -2,11 +2,11 @@ package com.kitri.dto;
 
 import java.util.List;
 
-public class PageBean {
+public class PageBean<T> {
 	private int cntPerPage = 10; // 페이지별 보여줄 목록수
 	private int startRow = 1; // 시작행
 	private int endRow = 1; // 끝행
-	private List<RepBoard> list; // 목록
+	private List<T> list; // 목록
 	private int totalPage = 1; // 총페이지수
 	private int totalCnt; // 총게시글 수
 	private int cntPerPageGroup = 3; // 페이지그룹에 보여줄 페이지수
@@ -70,11 +70,11 @@ public class PageBean {
 		this.endRow = endRow;
 	}
 
-	public List<RepBoard> getList() {
+	public List<T> getList() {
 		return list;
 	}
 
-	public void setList(List<RepBoard> list) {
+	public void setList(List<T> list) {
 		this.list = list;
 	}
 

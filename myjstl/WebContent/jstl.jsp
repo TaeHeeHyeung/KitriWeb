@@ -48,7 +48,6 @@ ${i}
 	</c:forEach>
 	1~10합: ${total}
 	<hr>
-
 	<%
 		List<String> list = new ArrayList<>();
 		list.add("one");
