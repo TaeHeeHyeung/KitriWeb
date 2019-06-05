@@ -22,4 +22,8 @@ public class CustomerService {
 			return "-1";
 		}
 	}
+	public static void main(String[] args) {
+		CustomerService service = new CustomerService();
+		System.out.println(service.login("test","testp"));
+	}
 }

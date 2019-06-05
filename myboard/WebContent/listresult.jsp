@@ -34,6 +34,7 @@ $(function() {
 	});
 });
 </script>
+
 <c:set var="bean" scope="application" value="${requestScope.pagebean}"></c:set>
 <div style="display: inline-block;">
 	<table>
