@@ -20,9 +20,11 @@ public class LoginServlet extends HttpServlet {
 		String pass = request.getParameter("pass");
 		String result = service.login(id, pass);
 		HttpSession session = request.getSession();
+		System.out.println("loginServlet id: "+id+"\tpass:"+pass);
 		session.removeAttribute("loginInfo");
-		System.out.println("loginServlet");
+		
 		if(result.equals("1")) {//성공
+			System.out.println("loginServlet 로그인 성공");
 			session.setAttribute("loginInfo", id);
 		}
 		request.setAttribute("result", result);

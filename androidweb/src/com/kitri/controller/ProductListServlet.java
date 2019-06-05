@@ -26,10 +26,10 @@ public class ProductListServlet extends HttpServlet {
 		service = new ProductService();
 	}
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		System.out.println("ProductListServlet doGet");
 		List<Product> list = service.findAll();
 		
 		ObjectMapper mapper= new ObjectMapper();
-		
 		String jsonList = mapper.writeValueAsString(list);
 
 		request.setAttribute("json", jsonList);

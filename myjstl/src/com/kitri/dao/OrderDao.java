@@ -11,6 +11,8 @@ import com.kitri.util.DBConnection;
 
 public class OrderDao {
 	// OrderInfo has a Lines
+	public OrderDao() {
+	}
 	public void insert(OrderInfo info) throws AddException {
 		Connection con = null;
 		try {

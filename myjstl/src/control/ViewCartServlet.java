@@ -8,6 +8,10 @@ import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
 
+import org.json.simple.parser.JSONParser;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.kitri.dto.OrderLine;
 import com.kitri.dto.Product;
 import com.kitri.exception.NotFoundException;
 import com.kitri.service.ProductService;
@@ -25,28 +29,50 @@ public class ViewCartServlet extends HttpServlet {
 	}
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		System.out.println("ViewCartServlet doGet");
+		
+		String userAgent = request.getHeader("User-Agent");
+		String path="";
+		
 		HttpSession session = request.getSession();
 		Map<Product, Integer> c = (Map)session.getAttribute("cart");
 		Map<Product, Integer> rc = new HashMap<>();
-		System.out.println("ViewCart :cart");
+		
 		if( c != null ){
 			Set<Product>keys =  c.keySet();
 			for(Product p: keys){
 				String no = p.getProd_no();
-				System.out.println("ViewCart :for");		
 				try{
 					Product p1 = service.findByNo(no);
 					int quantity = c.get(p);          
 					rc.put(p1, quantity);
-					System.out.println("ViewCart :doget");
+					System.out.println("ViewCartServlet: map"+ p1.toString()+" "+quantity);
 				}catch(NotFoundException e){ }
+			}			
+			
+
+			
+			ObjectMapper mapper = new ObjectMapper();
+			String jsonStr = mapper.writeValueAsString(rc);
+//			System.out.println(jsonStr);
+
+			
+
+			
+			
+			System.out.println(userAgent);
+			if(userAgent.contains("Dalvik")) {
+				request.setAttribute("jsonStr", jsonStr);
+				path = "/viewcartresultjson.jsp";
+			}else {
+				//path = "/viewcartresult.jsp";
+				request.setAttribute("rcart", rc);
+				path = "/viewcartresult.jsp";
+				
 			}
-			System.out.println("ViewCart :end for");
-			request.setAttribute("rcart", rc);
-			String path = "/viewcartresult.jsp";
+			
 			RequestDispatcher rd = request.getRequestDispatcher(path);
 			rd.forward(request, response);
 		}
-
 	}
 }
