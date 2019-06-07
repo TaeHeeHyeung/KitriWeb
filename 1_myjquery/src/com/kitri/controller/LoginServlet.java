@@ -31,12 +31,12 @@ public class LoginServlet extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		
-		request.setCharacterEncoding("UTF-8");
+		System.out.println("LoginServlet doPost");
 		String id = request.getParameter("id");
 		String pass = request.getParameter("pass");
-		System.out.println("LoginServlet id" + id + "pass" + pass);
 		String result = customerService.login(id, pass);
+		
+		System.out.println("LoginServlet id" + id + "pass" + pass+"result"+result);
 		
 		HttpSession session= request.getSession();
 		session.removeAttribute("loginInfo");
@@ -46,11 +46,9 @@ public class LoginServlet extends HttpServlet {
 		}		
 		
 		request.setAttribute("result", result);
-		System.out.println(result);
 		String path = "/loginresult.jsp";
 		MoveUrl.forward(response, request, path);
-
-//		doGet(request, response);
+		
 	}
 
 }
