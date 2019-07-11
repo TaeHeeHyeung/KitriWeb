@@ -48,17 +48,11 @@ public class ViewCartServlet extends HttpServlet {
 					rc.put(p1, quantity);
 					System.out.println("ViewCartServlet: map"+ p1.toString()+" "+quantity);
 				}catch(NotFoundException e){ }
-			}			
-			
-
+			}		
 			
 			ObjectMapper mapper = new ObjectMapper();
 			String jsonStr = mapper.writeValueAsString(rc);
 //			System.out.println(jsonStr);
-
-			
-
-			
 			
 			System.out.println(userAgent);
 			if(userAgent.contains("Dalvik")) {
